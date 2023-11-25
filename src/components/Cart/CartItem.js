@@ -1,13 +1,11 @@
-import { useSelector } from 'react-redux';
+
 import classes from './CartItem.module.css';
 
 const CartItem = (props) => {
   const { title, quantity, total, price } = props.item;
-  const showCart=useSelector(state=>state.cart.showCart)
 
   return (
-     <div>
-    {showCart &&  <li className={classes.item}>
+      <li className={classes.item}>
       <header>
         <h3>{title}</h3>
         <div className={classes.price}>
@@ -24,8 +22,7 @@ const CartItem = (props) => {
           <button>+</button>
         </div>
       </div>
-    </li>}
-    </div>
+    </li>
   );
 };
 
